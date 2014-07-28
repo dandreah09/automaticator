@@ -3,4 +3,5 @@
   , "AUTOMATIC_CLIENT_SECRET": "YOUR AUTOMATIC CLIENT SECRET"
   , "AUTOMATIC_AUTHORIZE_URL": "https://www.automatic.com/oauth/authorize/"
   , "AUTOMATIC_AUTH_TOKEN_URL": "https://www.automatic.com/oauth/access_token/"
+  , "AUTOMATIC_SCOPES": "SPACE SEPARATED LIST OF SCOPES THAT YOU NEED"
 }

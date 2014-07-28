@@ -21,8 +21,6 @@ app.set('store', store);
 nconf.env().argv();
 nconf.file('./config.json');
 
-nconf.set('AUTOMATIC_SCOPES', 'scope:trip:summary scope:location scope:vehicle scope:notification:hard_accel scope:notification:hard_brake scope:notification:speeding scope:mil:on scope:mil:off');
-
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
