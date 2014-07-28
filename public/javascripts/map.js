@@ -12,10 +12,11 @@ var map = L.mapbox.map('map', 'automatic.h5kpm228', {maxZoom: 16}).setView([37.9
     , 'parking:changed': 'Parking Location Changed'
     , 'mil:on': 'MIL (check engine light) On'
     , 'mil:off': 'MIL (check engine light) Cleared'
+    , 'hmi:interaction': 'Car Interaction'
   };
 
 /* Web socket connection */
-var ws = new WebSocket('ws://' + window.document.location.host);
+var ws = new WebSocket((window.document.location.protocol === 'https:' ? 'wss://' : 'ws://') + window.document.location.host);
 ws.onopen = function () {
   $('#alert')
     .html("<b>Connected:</b> Waiting for events")
@@ -52,6 +53,8 @@ ws.onmessage = function (msg) {
       if(data.dtcs) {
         data.dtcs.forEach(function(dtc) { description.push(dtc.code + ': ' + dtc.description); });
       }
+    } else if (data.type == 'hmi:interaction') {
+      description.push('Button: ' + data.button.id + ' ' + data.interaction);
     }
 
     updateAlert(title, '');
