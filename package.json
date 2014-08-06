@@ -1,26 +1,32 @@
 {
   "name": "Automaticator",
   "description": "Automatic API Webhook Demo Application",
-  "version": "0.1.0",
-  "private": false,
-  "engines": {
-    "node": "0.10.x",
-    "npm":  "1.4.x"
-  },
-  "scripts": {
-    "start": "node ./bin/www"
+  "version": "0.2.0",
+  "author": {
+    "name": "Brendan Nee",
+    "email": "brendan@automatic.com"
   },
   "dependencies": {
+    "body-parser": "~1.5.2",
+    "debug": "~1.0.4",
     "express": "~3.4.8",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "body-parser": "~1.0.0",
-    "debug": "~0.7.4",
-    "request": "= 2.34.x",
-    "ws": "= 0.4.x",
-    "underscore": "= 1.6.x",
-    "nconf": "= 0.6.x",
-    "monk": "= 0.7.x"
+    "monk": "~0.9.0",
+    "morgan": "~1.2.2",
+    "nconf": "~0.6.9",
+    "request": "~2.39.0",
+    "static-favicon": "~1.0.2",
+    "underscore": "~1.6.0",
+    "ws": "~0.4.31"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "homepage": "https://automatic.com/developer",
+  "license": "MIT",
+  "private": false,
+  "repository": "https://github.com/automatic/automaticator",
+  "scripts": {
+    "start": "node ./bin/www"
   }
 }

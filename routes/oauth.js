@@ -31,7 +31,7 @@ exports.redirect = function(req, res) {
   function saveAuthToken(e, r, body) {
     var access_token;
     try {
-      access_token = JSON.parse(body || '{}')
+      access_token = JSON.parse(body || '{}');
       req.session.access_token = access_token.access_token;
       req.session.user_id = access_token.user.id;
       req.session.scopes = access_token.scopes;
