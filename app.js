@@ -24,8 +24,8 @@ app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(express.cookieParser('rq6xCSJu'));
-app.use(express.session({store: store, secret: 'rXrq6xCSJu'}));
+app.use(express.cookieParser(nconf.get('SESSION_SECRET')));
+app.use(express.session({store: store, secret: nconf.get('SESSION_SECRET')}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 

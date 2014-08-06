@@ -1,7 +1,12 @@
 var _ = require('underscore');
 var express = require('express');
-var parseCookie = express.cookieParser('rXrq6xCSJu');
 var db = require('./database');
+var nconf = require('nconf');
+
+nconf.env().argv();
+nconf.file('./config.json');
+var parseCookie = express.cookieParser(nconf.get('SESSION_SECRET'));
+
 
 exports.setup = function(app) {
   var wss = app.get('wss');
